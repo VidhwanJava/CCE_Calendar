@@ -658,6 +658,7 @@ class CompactCalendarController {
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
+
     }
 
     void addEvent(Event event) {
@@ -915,7 +916,12 @@ class CompactCalendarController {
                     dayPaint.setColor(calenderTextColor);
                     dayPaint.setTypeface(Typeface.DEFAULT_BOLD);
                     dayPaint.setStyle(Paint.Style.FILL);
-                    dayPaint.setColor(calenderTextColor);
+                    if(dayColumn==6) {
+                        dayPaint.setColor(Color.rgb(255,0,0));
+                    }
+                    else {
+                        dayPaint.setColor(calenderTextColor);
+                    }
                     canvas.drawText(dayColumnNames[colDirection], xPosition, paddingHeight, dayPaint);
                     dayPaint.setTypeface(Typeface.DEFAULT);
                 }
@@ -929,6 +935,12 @@ class CompactCalendarController {
                     // TODO calculate position of circle in a more reliable way
                     drawDayCircleIndicator(currentDayIndicatorStyle, canvas, xPosition, yPosition, currentDayBackgroundColor);
                     defaultCalenderTextColorToUse = currentDayTextColor;
+                }
+                if(dayColumn==6 || (dayRow==2 && dayColumn==5 && day >7)) {
+                    defaultCalenderTextColorToUse=(Color.rgb(255,0,0));
+                }
+                else {
+                    defaultCalenderTextColorToUse=(calenderTextColor);
                 }
                 if (day <= 0) {
                     if (displayOtherMonthDays) {

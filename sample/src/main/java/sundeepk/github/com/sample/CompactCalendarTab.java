@@ -46,7 +46,7 @@ public class CompactCalendarTab extends Fragment {
         View mainTabView = inflater.inflate(R.layout.main_tab,container,false);
 
         final List<String> mutableBookings = new ArrayList<>();
-
+//        currentCalender.set(2019,Calendar.JULY,1);
         final ListView bookingsListView = mainTabView.findViewById(R.id.bookings_listview);
         final Button showPreviousMonthBut = mainTabView.findViewById(R.id.prev_button);
         final Button showNextMonthBut = mainTabView.findViewById(R.id.next_button);
@@ -59,23 +59,25 @@ public class CompactCalendarTab extends Fragment {
         bookingsListView.setAdapter(adapter);
         compactCalendarView = mainTabView.findViewById(R.id.compactcalendar_view);
 
+//        compactCalendarView.set;
+
         // below allows you to configure color for the current day in the month
         // compactCalendarView.setCurrentDayBackgroundColor(getResources().getColor(R.color.black));
         // below allows you to configure colors for the current day the user has selected
-        // compactCalendarView.setCurrentSelectedDayBackgroundColor(getResources().getColor(R.color.dark_red));
+         compactCalendarView.setCurrentSelectedDayBackgroundColor(getResources().getColor(R.color.dark_red));
         compactCalendarView.setUseThreeLetterAbbreviation(false);
         compactCalendarView.setFirstDayOfWeek(Calendar.MONDAY);
         compactCalendarView.setIsRtl(false);
         compactCalendarView.displayOtherMonthDays(false);
         //compactCalendarView.setIsRtl(true);
-        loadEvents();
-        loadEventsForYear(2017);
+//        loadEvents();
+        loadEventsForYear(2019);
         compactCalendarView.invalidate();
 
         logEventsByMonth(compactCalendarView);
 
         // below line will display Sunday as the first day of the week
-        // compactCalendarView.setShouldShowMondayAsFirstDay(false);
+//         compactCalendarView.setShouldShowMondayAsFirstDay(false);
 
         // disable scrolling calendar
         // compactCalendarView.shouldScrollMonth(false);
@@ -84,9 +86,8 @@ public class CompactCalendarTab extends Fragment {
         // compactCalendarView.displayOtherMonthDays(true);
 
         // show Sunday as first day of month
-        // compactCalendarView.setShouldShowMondayAsFirstDay(false);
-
-        //set initial title
+//         compactCalendarView.setShouldShowMondayAsFirstDay(false);
+//set initial title
         toolbar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         toolbar.setTitle(dateFormatForMonth.format(compactCalendarView.getFirstDayOfCurrentMonth()));
 
@@ -154,8 +155,8 @@ public class CompactCalendarTab extends Fragment {
                 dateFormatForMonth.setTimeZone(timeZone);
                 compactCalendarView.setLocale(timeZone, locale);
                 compactCalendarView.setUseThreeLetterAbbreviation(false);
-                loadEvents();
-                loadEventsForYear(2017);
+//                loadEvents();
+                loadEventsForYear(2019);
                 logEventsByMonth(compactCalendarView);
 
             }
@@ -173,7 +174,7 @@ public class CompactCalendarTab extends Fragment {
         // compactCalendarView.shouldDrawIndicatorsBelowSelectedDays(true);
 
         // uncomment below to open onCreate
-        //openCalendarOnCreate(v);
+//        openCalendarOnCreate(v);
 
         return mainTabView;
     }
@@ -243,8 +244,8 @@ public class CompactCalendarTab extends Fragment {
     }
 
     private void loadEventsForYear(int year) {
-        addEvents(Calendar.DECEMBER, year);
-        addEvents(Calendar.AUGUST, year);
+//        addEvents(Calendar.DECEMBER, year);
+        addEvents(Calendar.AUGUST, 2019);
     }
 
     private void logEventsByMonth(CompactCalendarView compactCalendarView) {
@@ -263,7 +264,7 @@ public class CompactCalendarTab extends Fragment {
         currentCalender.setTime(new Date());
         currentCalender.set(Calendar.DAY_OF_MONTH, 1);
         Date firstDayOfMonth = currentCalender.getTime();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 3; i++) {
             currentCalender.setTime(firstDayOfMonth);
             if (month > -1) {
                 currentCalender.set(Calendar.MONTH, month);
@@ -276,7 +277,9 @@ public class CompactCalendarTab extends Fragment {
             setToMidnight(currentCalender);
             long timeInMillis = currentCalender.getTimeInMillis();
 
-            List<Event> events = getEvents(timeInMillis, i);
+//            List<Event> events = getEvents(timeInMillis, i);
+            String[] data = new String[] {"Sports at 2:30 PM","Arts at 2:30 PM","Holiday!!!!"};
+            List<Event> events =Arrays.asList(new Event(Color.argb(255, 169, 68, 65), timeInMillis, data[i]));
 
             compactCalendarView.addEvents(events);
         }
@@ -284,7 +287,7 @@ public class CompactCalendarTab extends Fragment {
 
     private List<Event> getEvents(long timeInMillis, int day) {
         if (day < 2) {
-            return Arrays.asList(new Event(Color.argb(255, 169, 68, 65), timeInMillis, "Event at " + new Date(timeInMillis)));
+            return Arrays.asList(new Event(Color.argb(255, 169, 68, 65), timeInMillis, "Sports at 2:30 PM"));
         } else if ( day > 2 && day <= 4) {
             return Arrays.asList(
                     new Event(Color.argb(255, 169, 68, 65), timeInMillis, "Event at " + new Date(timeInMillis)),
@@ -293,7 +296,9 @@ public class CompactCalendarTab extends Fragment {
             return Arrays.asList(
                     new Event(Color.argb(255, 169, 68, 65), timeInMillis, "Event at " + new Date(timeInMillis) ),
                     new Event(Color.argb(255, 100, 68, 65), timeInMillis, "Event 2 at " + new Date(timeInMillis)),
-                    new Event(Color.argb(255, 70, 68, 65), timeInMillis, "Event 3 at " + new Date(timeInMillis)));
+                    new Event(Color.argb(255, 70, 68, 65), timeInMillis, "Event 3 at " + new Date(timeInMillis)),
+                    new Event(Color.argb(255, 90, 68, 65), timeInMillis, "Event 4 at " + new Date(timeInMillis)),
+                    new Event(Color.argb(255, 80, 68, 65), timeInMillis, "Event 5 at " + new Date(timeInMillis)));
         }
     }
 

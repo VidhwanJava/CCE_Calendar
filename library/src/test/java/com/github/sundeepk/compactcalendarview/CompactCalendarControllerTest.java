@@ -1,6 +1,7 @@
 package com.github.sundeepk.compactcalendarview;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.MotionEvent;
@@ -53,11 +54,12 @@ public class CompactCalendarControllerTest {
 
     CompactCalendarController underTest;
 
+
     @Before
     public void setUp(){
         Locale.setDefault(Locale.ENGLISH);
         TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
-
+//        paint.setColor(Color.argb(255, 56, 0, 0));
         when(velocityTracker.getXVelocity()).thenReturn(-200f);
         underTest =
                 new CompactCalendarController(paint, overScroller, rect, null, null, 0, 0, 0, velocityTracker, 0, eventsContainer, Locale.getDefault(), TimeZone.getDefault());
