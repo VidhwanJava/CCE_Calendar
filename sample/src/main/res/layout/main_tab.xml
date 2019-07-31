@@ -4,6 +4,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_light"
     android:animateLayoutChanges="true">
 
 
@@ -15,13 +16,15 @@
         <com.github.sundeepk.compactcalendarview.CompactCalendarView
             android:id="@+id/compactcalendar_view"
             android:layout_width="wrap_content"
-            android:layout_height="462dp"
+            android:layout_height="433dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
             app:compactCalendarBackgroundColor="@android:color/background_light"
             app:compactCalendarCurrentDayBackgroundColor="?attr/colorButtonNormal"
             app:compactCalendarCurrentDayIndicatorStyle="fill_large_indicator"
-            app:compactCalendarCurrentSelectedDayBackgroundColor="#5381ff"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="@color/light_blue"
             app:compactCalendarEventIndicatorStyle="small_indicator"
-            app:compactCalendarOtherMonthDaysTextColor="#534c4c"
+            app:compactCalendarOtherMonthDaysTextColor="@color/light_blue"
             app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="true"
             app:compactCalendarTargetHeight="450dp"
             app:compactCalendarTextColor="@android:color/background_dark"
@@ -69,6 +72,17 @@
             android:text="Expose animation"
             android:visibility="gone" />
 
+        <ListView
+            android:id="@+id/bookings_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:clickable="false"
+            android:visibility="visible"
+            tools:layout_editor_absoluteY="451dp">
+
+        </ListView>
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -76,17 +90,8 @@
             android:paddingLeft="10dp"
             android:text="@string/all_dates_marked_as_red_and_with_red_dot_are_hoiday"
             android:textColor="@android:color/darker_gray"
-            android:textStyle="italic" />
-
-        <ListView
-            android:id="@+id/bookings_listview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:visibility="visible"
-            tools:layout_editor_absoluteY="451dp">
-
-        </ListView>
+            android:textStyle="italic"
+            android:visibility="invisible" />
     </LinearLayout>
 
 

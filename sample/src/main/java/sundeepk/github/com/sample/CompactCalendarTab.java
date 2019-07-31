@@ -1,7 +1,6 @@
 package sundeepk.github.com.sample;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,7 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
@@ -67,7 +65,7 @@ public class CompactCalendarTab extends Fragment {
         // below allows you to configure color for the current day in the month
         // compactCalendarView.setCurrentDayBackgroundColor(getResources().getColor(R.color.black));
         // below allows you to configure colors for the current day the user has selected
-         compactCalendarView.setCurrentSelectedDayBackgroundColor(getResources().getColor(R.color.dark_red));
+         compactCalendarView.setCurrentSelectedDayBackgroundColor(getResources().getColor(R.color.light_blue));
         compactCalendarView.setUseThreeLetterAbbreviation(false);
         compactCalendarView.setFirstDayOfWeek(Calendar.MONDAY);
         compactCalendarView.setIsRtl(false);
@@ -115,6 +113,7 @@ public class CompactCalendarTab extends Fragment {
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
                 toolbar.setTitle(dateFormatForMonth.format(firstDayOfNewMonth));
+                onDayClick(firstDayOfNewMonth);
             }
         });
 
@@ -283,8 +282,8 @@ public class CompactCalendarTab extends Fragment {
 
 //            List<Event> events = getEvents(timeInMillis, i);
             String[][] data = new String[][] {{"COMMENCEMENT OF CLASSES","","VALUE ADDED PROGRAM","","","","","","FRESHERS DAY","","Holiday - BAKRID","","","","Holiday - INDEPENDENCE DAY","ADDON","ADDON","","MODULE TEST 1","","","","Holiday - SREEKRISHNA JAYANTHI","","","REMEDIAL CLASS","REMEDIAL CLASS","Holiday - AYANKALI JAYANTHI","","","ADDRESS BY PRINCIPAL/HOD"},
-                                            {"","SERIES 1","","","","ONAM CELEBRATION","Holiday - ONAM VACATION STARTS","","Holiday - MUHRAM","Holiday","Holiday","Holiday","Holiday","","","REOPENING, EXTRA ADDON","","","","PTA MEETING","Holiday - SREENARAYANA GURU SAMADHI","","REMEDIAL BASED ON SERIES 1","","","","FILM CLUB/LITERARY CLUB ACTIVITIES","","","",""},
-                                             {"","Holiday - GANDHI JAYANTHI","","VALUE ADDED PROGRAM","SPORTS DAY","","Holiday - MAHANAVAMI","","","","","","","SERIES II","","","","","SOCIALLY COMMITTED ACTIVITY","","REMEDIAL BASED ON SERIES II","","","","","","Holiday - DEEPAVALI","","","","", },
+                                            {"","SERIES 1","","","","ONAM CELEBRATION","Holiday - ONAM VACATION STARTS","","Holiday - MUHRAM","Holiday","Holiday","Holiday","Holiday","","","REOPENING, EXTRA ADDON","","","","PTA MEETING","Holiday - SREENARAYANA GURU SAMADHI","","REMEDIAL BASED ON SERIES 1","","","","FILM CLUB / LITERARY CLUB ACTIVITIES","","","",""},
+                                             {"","Holiday - GANDHI JAYANTHI","","VALUE ADDED PROGRAM","SPORTS DAY","","Holiday - MAHANAVAMI","","","","","","","SERIES II","","","","","SOCIALLY COMMITTEED ACTIVITY","","REMEDIAL BASED ON SERIES II","","","","","","Holiday - DEEPAVALI","","","","", },
                                              { "VALUE ADDED PROGRAM","","","","","SERIES III","","","","","","","","","CLASSES END","","","REMEDIAL CLASS STARTS","","","","","","","","","","","","","","","","","" },
                                             {"","","","","","","","","","","","","","","","","","","","","","", "Holiday - CHRISTMAS VACATION STARTS","Holiday","Holiday - CHRISTMAS","Holiday","Holiday","","","","",}
                                                     };
@@ -301,22 +300,6 @@ public class CompactCalendarTab extends Fragment {
         }
     }
 
-    private List<Event> getEvents(long timeInMillis, int day) {
-        if (day < 2) {
-            return Arrays.asList(new Event(Color.argb(255, 169, 68, 65), timeInMillis, "Sports at 2:30 PM"));
-        } else if ( day > 2 && day <= 4) {
-            return Arrays.asList(
-                    new Event(Color.argb(255, 169, 68, 65), timeInMillis, "Event at " + new Date(timeInMillis)),
-                    new Event(Color.argb(255, 100, 68, 65), timeInMillis, "Event 2 at " + new Date(timeInMillis)));
-        } else {
-            return Arrays.asList(
-                    new Event(Color.argb(255, 169, 68, 65), timeInMillis, "Event at " + new Date(timeInMillis) ),
-                    new Event(Color.argb(255, 100, 68, 65), timeInMillis, "Event 2 at " + new Date(timeInMillis)),
-                    new Event(Color.argb(255, 70, 68, 65), timeInMillis, "Event 3 at " + new Date(timeInMillis)),
-                    new Event(Color.argb(255, 90, 68, 65), timeInMillis, "Event 4 at " + new Date(timeInMillis)),
-                    new Event(Color.argb(255, 80, 68, 65), timeInMillis, "Event 5 at " + new Date(timeInMillis)));
-        }
-    }
 
     private void setToMidnight(Calendar calendar) {
         calendar.set(Calendar.HOUR_OF_DAY, 0);

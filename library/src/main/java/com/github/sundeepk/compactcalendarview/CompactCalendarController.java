@@ -360,6 +360,7 @@ class CompactCalendarController {
         if(shouldSelectFirstDayOfMonthOnScroll){
             setCalenderToFirstDayOfMonth(calendarWithFirstDayOfMonth, currentCalender.getTime(), 0, 1);
             setCurrentDate(calendarWithFirstDayOfMonth.getTime());
+
         }
         performMonthScrollCallback();
     }
