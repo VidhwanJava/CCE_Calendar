@@ -6,7 +6,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icon1"
-        android:label="CCE HOLISTIC CALENDER"
+        android:label="CCE HOLISTIC CALENDAR"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
