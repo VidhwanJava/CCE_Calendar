@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager pager;
     private ViewPagerAdapter adapter;
     private SlidingTabLayout tabs;
-    private CharSequence titles[]= {"Calender","About Us"};
+    private CharSequence titles[]= {"CALENDAR","ABOUT US"};
     private int numberOfTabs = 2;
 
     @Override
