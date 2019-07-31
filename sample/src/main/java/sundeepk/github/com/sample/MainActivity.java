@@ -1,5 +1,6 @@
 package sundeepk.github.com.sample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getSupportActionBar().setElevation(0);
         setContentView(R.layout.activity_main);
-
+        TextView textv = (TextView) findViewById(R.id.textView3);
+        textv.setShadowLayer(0, 0, 0, Color.BLACK);
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
