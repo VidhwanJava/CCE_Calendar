@@ -247,7 +247,7 @@ public class CompactCalendarTab extends Fragment {
     }
 
     private void loadEventsForYear(int year) {
-        for(int i=7;i<9;i++)
+        for(int i=7;i<12;i++)
         addEvents(i, 2019);
     }
 
@@ -283,8 +283,11 @@ public class CompactCalendarTab extends Fragment {
 
 //            List<Event> events = getEvents(timeInMillis, i);
             String[][] data = new String[][] {{"COMMENCEMENT OF CLASSES","","VALUE ADDED PROGRAM","","","","","","FRESHERS DAY","","Holiday - BAKRID","","","","Holiday - INDEPENDENCE DAY","ADDON","ADDON","","MODULE TEST 1","","","","Holiday - SREEKRISHNA JAYANTHI","","","REMEDIAL CLASS","REMEDIAL CLASS","Holiday - AYANKALI JAYANTHI","","","ADDRESS BY PRINCIPAL/HOD"},
-                                                {"","SERIES 1","","","","ONAM CELEBRATION","Holiday - ONAM VACATION STARTS","","Holiday - MUHRAM","Holiday","Holiday","Holiday","Holiday","","","REOPENING, EXTRA ADDON","","","","PTA MEETING","Holiday - SREENARAYANA GURU SAMADHI","","REMEDIAL BASED ON SERIES 1","","","","FILM CLUB/LITERARY CLUB ACTIVITIES","","","",""}
-                                                };
+                                            {"","SERIES 1","","","","ONAM CELEBRATION","Holiday - ONAM VACATION STARTS","","Holiday - MUHRAM","Holiday","Holiday","Holiday","Holiday","","","REOPENING, EXTRA ADDON","","","","PTA MEETING","Holiday - SREENARAYANA GURU SAMADHI","","REMEDIAL BASED ON SERIES 1","","","","FILM CLUB/LITERARY CLUB ACTIVITIES","","","",""},
+                                             {"","Holiday - GANDHI JAYANTHI","","VALUE ADDED PROGRAM","SPORTS DAY","","Holiday - MAHANAVAMI","","","","","","","SERIES II","","","","","SOCIALLY COMMITTEED ACTIVITY","","REMEDIAL BASED ON SERIES II","","","","","","Holiday - DEEPAVALI","","","","", },
+                                             { "VALUE ADDED PROGRAM","","","","","SERIES III","","","","","","","","","CLASSES END","","","REMEDIAL CLASS STARTS","","","","","","","","","","","","","","","","","" },
+                                            {"","","","","","","","","","","","","","","","","","","","","","", "Holiday - CHRISTMAS VACATION STARTS","Holiday","Holiday - CHRISTMAS","Holiday","Holiday","","","","",}
+                                                    };
             if(data[month-7][i]!="") {
                 int r=0,g=128,b=255;
                 if(data[month-7][i].contains("Holiday")){
