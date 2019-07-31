@@ -69,6 +69,15 @@
             android:text="Expose animation"
             android:visibility="gone" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="@string/all_dates_marked_as_red_and_with_red_dot_are_hoiday"
+            android:textColor="@android:color/darker_gray"
+            android:textStyle="italic" />
+
         <ListView
             android:id="@+id/bookings_listview"
             android:layout_width="match_parent"
