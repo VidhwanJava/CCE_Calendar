@@ -936,7 +936,7 @@ class CompactCalendarController {
                     drawDayCircleIndicator(currentDayIndicatorStyle, canvas, xPosition, yPosition, currentDayBackgroundColor);
                     defaultCalenderTextColorToUse = currentDayTextColor;
                 }
-                if(dayColumn==6 || (dayRow==2 && dayColumn==5 && day >7)) {
+                if(dayColumn==6 || (dayRow==2 && dayColumn==5 && day >7) || (dayRow==3 && dayColumn==5 && day <15)) {
                     defaultCalenderTextColorToUse=(Color.rgb(255,0,0));
                 }
                 else {
