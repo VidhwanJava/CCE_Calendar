@@ -204,7 +204,7 @@ class CompactCalendarController {
         xIndicatorOffset = 3.5f * screenDensity;
 
         //scale small indicator by screen density
-        smallIndicatorRadius = 2.5f * screenDensity+2;
+        smallIndicatorRadius = 2.5f * screenDensity+4;
 
         //just set a default growFactor to draw full calendar when initialised
         growFactor = Integer.MAX_VALUE;
@@ -997,7 +997,7 @@ class CompactCalendarController {
     }
 
     private void drawEventIndicatorCircle(Canvas canvas, float x, float y, int color) {
-        dayPaint.setColor(Color.rgb(0, 128, 255));
+        dayPaint.setColor(color);
         if (eventIndicatorStyle == SMALL_INDICATOR) {
             dayPaint.setStyle(Paint.Style.FILL);
             drawCircle(canvas, smallIndicatorRadius, x, y);
