@@ -204,7 +204,7 @@ class CompactCalendarController {
         xIndicatorOffset = 3.5f * screenDensity;
 
         //scale small indicator by screen density
-        smallIndicatorRadius = 2.5f * screenDensity;
+        smallIndicatorRadius = 2.5f * screenDensity+2;
 
         //just set a default growFactor to draw full calendar when initialised
         growFactor = Integer.MAX_VALUE;
@@ -785,6 +785,9 @@ class CompactCalendarController {
                 int weekNumberForMonth = eventsCalendar.get(Calendar.WEEK_OF_MONTH);
                 float xPosition = widthPerDay * dayOfWeek + paddingWidth + paddingLeft + accumulatedScrollOffset.x + offset - paddingRight;
                 float yPosition = weekNumberForMonth * heightPerDay + paddingHeight;
+                ///duplicate
+//                float xPosition = widthPerDay * dayOfWeek+ paddingWidth + paddingLeft + accumulatedScrollOffset.x + offset;
+//                float yPosition = weekNumberForMonth * heightPerDay + 15;
 
                 if (((animationStatus == EXPOSE_CALENDAR_ANIMATION || animationStatus == ANIMATE_INDICATORS) && xPosition >= growFactor ) || yPosition >= growFactor) {
                     // only draw small event indicators if enough of the calendar is exposed
@@ -936,7 +939,7 @@ class CompactCalendarController {
                     drawDayCircleIndicator(currentDayIndicatorStyle, canvas, xPosition, yPosition, currentDayBackgroundColor);
                     defaultCalenderTextColorToUse = currentDayTextColor;
                 }
-                if(dayColumn==6 || (dayRow==2 && dayColumn==5 && day >7) || (dayRow==3 && dayColumn==5 && day <15)) {
+                if(dayColumn==6 || (dayRow==2 && dayColumn==5 && day >7) || (dayRow==3 && dayColumn==5 && day <15) || (dayRow==4 && dayColumn==5 && day >21) || (dayRow==5 && dayColumn==5 && day <29) ) {
                     defaultCalenderTextColorToUse=(Color.rgb(255,0,0));
                 }
                 else {
@@ -994,7 +997,7 @@ class CompactCalendarController {
     }
 
     private void drawEventIndicatorCircle(Canvas canvas, float x, float y, int color) {
-        dayPaint.setColor(color);
+        dayPaint.setColor(Color.rgb(0, 128, 255));
         if (eventIndicatorStyle == SMALL_INDICATOR) {
             dayPaint.setStyle(Paint.Style.FILL);
             drawCircle(canvas, smallIndicatorRadius, x, y);

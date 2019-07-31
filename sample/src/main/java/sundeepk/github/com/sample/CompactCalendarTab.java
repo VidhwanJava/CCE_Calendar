@@ -1,6 +1,7 @@
 package sundeepk.github.com.sample;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
@@ -56,6 +58,7 @@ public class CompactCalendarTab extends Fragment {
         final Button removeAllEventsBut = mainTabView.findViewById(R.id.remove_all_events);
 
         final ArrayAdapter adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, mutableBookings);
+
         bookingsListView.setAdapter(adapter);
         compactCalendarView = mainTabView.findViewById(R.id.compactcalendar_view);
 
@@ -263,8 +266,9 @@ public class CompactCalendarTab extends Fragment {
     private void addEvents(int month, int year) {
         currentCalender.setTime(new Date());
         currentCalender.set(Calendar.DAY_OF_MONTH, 1);
+        int last_day= currentCalender.getActualMaximum(Calendar.DAY_OF_MONTH);
         Date firstDayOfMonth = currentCalender.getTime();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i <last_day ; i++) {
             currentCalender.setTime(firstDayOfMonth);
             if (month > -1) {
                 currentCalender.set(Calendar.MONTH, month);
@@ -278,10 +282,11 @@ public class CompactCalendarTab extends Fragment {
             long timeInMillis = currentCalender.getTimeInMillis();
 
 //            List<Event> events = getEvents(timeInMillis, i);
-            String[] data = new String[] {"Sports at 2:30 PM","Arts at 2:30 PM","Holiday!!!!"};
-            List<Event> events =Arrays.asList(new Event(Color.argb(255, 169, 68, 65), timeInMillis, data[i]));
-
-            compactCalendarView.addEvents(events);
+            String[] data = new String[] {"COMMENCEMENT OF CLASSES","","VALUE ADDED PROGRAM","","","","","","FRESHERS DAY","","BAKRID","","","","INDEPENDENCE DAY","ADDON","ADDON","","MODULE TEST 1","","","","SREEKRISHNA JAYANTHI","","","REMEDIAL CLASS","REMEDIAL CLASS","AYANKALI JAYANTHI","","","ADDRESS BY PRINCIPAL/HOD"};
+            if(data[i]!="") {
+                List<Event> events = Arrays.asList(new Event(Color.argb(255, 169, 68, 65), timeInMillis, data[i]));
+                compactCalendarView.addEvents(events);
+            }
         }
     }
 
