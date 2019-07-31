@@ -14,11 +14,12 @@
         android:layout_height="40dp"
         android:autoSizeTextType="uniform"
         android:background="@color/light_blue"
-        android:paddingLeft="12dp"
-        android:paddingTop="10dp"
+        android:gravity="center"
+        android:paddingLeft="0dp"
+        android:paddingTop="5dp"
         android:text="CCE HOLISTIC CALENDAR"
         android:textColor="@android:color/background_light"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="normal|bold" />
 
     <include
