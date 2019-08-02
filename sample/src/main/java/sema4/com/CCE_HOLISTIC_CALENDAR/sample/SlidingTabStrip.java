@@ -1,4 +1,4 @@
-package sundeepk.github.com.sample;
+package sema4.com.CCE_HOLISTIC_CALENDAR.sample;
 
 /*
  * Copyright 2014 Google Inc. All rights reserved.

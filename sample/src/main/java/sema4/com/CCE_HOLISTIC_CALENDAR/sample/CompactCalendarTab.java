@@ -1,4 +1,4 @@
-package sundeepk.github.com.sample;
+package sema4.com.CCE_HOLISTIC_CALENDAR.sample;
 
 import android.graphics.Color;
 import android.os.Build;
