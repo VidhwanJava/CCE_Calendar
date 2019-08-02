@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="sundeepk.github.com.sample" >
+    package="sema4.com.CCE_HOLISTIC_CALENDAR.sample" >
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/icon1"
+        android:icon="@mipmap/app_icon"
         android:label="CCE HOLISTIC CALENDAR"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
-            android:label="CCE HOLISTIC CALENDER" >
+            android:name="sema4.com.CCE_HOLISTIC_CALENDAR.sample.MainActivity"
+            android:label="CCE HOLISTIC CALENDAR" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

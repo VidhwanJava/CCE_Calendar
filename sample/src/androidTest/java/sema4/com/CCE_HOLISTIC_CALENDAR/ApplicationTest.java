@@ -1,4 +1,4 @@
-package sundeepk.github.com.sample;
+package sema4.com.CCE_HOLISTIC_CALENDAR;
 
 import android.app.Activity;
 import android.content.Context;
@@ -20,8 +20,7 @@ import android.view.View;
 
 import com.azimolabs.conditionwatcher.ConditionWatcher;
 import com.azimolabs.conditionwatcher.Instruction;
-import com.facebook.testing.screenshot.Screenshot;
-import com.facebook.testing.screenshot.ViewHelpers;
+
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView.CompactCalendarAnimationListener;
 import com.github.sundeepk.compactcalendarview.domain.Event;
@@ -40,6 +39,9 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
+
+import sema4.com.CCE_HOLISTIC_CALENDAR.sample.MainActivity;
+import sema4.com.CCE_HOLISTIC_CALENDAR.sample.R;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
@@ -97,7 +99,7 @@ public class ApplicationTest {
 
         syncToolbarDate();
 
-        takeScreenShot();
+
     }
 
     @Test
@@ -105,7 +107,7 @@ public class ApplicationTest {
         setDrawEventsBelowDayIndicators(true);
         setDate(new Date(1423094400000L));
         addEvents(Calendar.FEBRUARY, 2015);
-        takeScreenShot();
+
 
     }
 
@@ -119,7 +121,7 @@ public class ApplicationTest {
         addEvents(Calendar.FEBRUARY, 2015);
         onView(withId(R.id.compactcalendar_view)).perform(clickXY(60, 150));
         setIndicatorType(FILL_LARGE_INDICATOR, FILL_LARGE_INDICATOR, FILL_LARGE_INDICATOR);
-        takeScreenShot();
+
     }
 
     @Test
@@ -131,7 +133,7 @@ public class ApplicationTest {
         setDate(new Date(1423353600000L));
         addEvents(Calendar.FEBRUARY, 2015);
         onView(withId(R.id.compactcalendar_view)).perform(clickXY(60, 120));
-        takeScreenShot(800);
+
     }
 
     @Test
@@ -139,7 +141,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setShouldDrawDaysFromOtherMonths(true);
-        takeScreenShot();
+
     }
 
     @Test
@@ -148,7 +150,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setShouldDrawDaysFromOtherMonths(true);
-        takeScreenShot();
+
     }
 
     @Test
@@ -157,8 +159,8 @@ public class ApplicationTest {
         setDate(new Date(1423353600000L));
         setShouldDrawDaysFromOtherMonths(true);
         scrollCalendarForwardBy(1);
-        takeScreenShot();
-    }
+
+}
 
     @Test
     public void testItDisplaysDaysFromOtherMonthsForAfterScrollingFromFebToMarchRtl(){
@@ -167,7 +169,7 @@ public class ApplicationTest {
         setDate(new Date(1423353600000L));
         setShouldDrawDaysFromOtherMonths(true);
         scrollCalendarBackwardsBy(1);
-        takeScreenShot();
+
     }
 
     @Test
@@ -177,7 +179,7 @@ public class ApplicationTest {
         setDate(new Date(1423353600000L));
         getInstrumentation().waitForIdleSync();
         scrollCalendarBackwardsBy(1);
-        takeScreenShot();
+
     }
 
 
@@ -187,7 +189,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.SUNDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -196,7 +198,7 @@ public class ApplicationTest {
         // defaults to Monday
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
-        takeScreenShot();
+
     }
 
     @Test
@@ -205,7 +207,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.TUESDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -214,7 +216,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.WEDNESDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -223,7 +225,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.THURSDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -232,7 +234,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.FRIDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -241,7 +243,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.SATURDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -252,7 +254,7 @@ public class ApplicationTest {
         setFirstDayOfWeek(Calendar.WEDNESDAY);
         onView(withId(R.id.set_locale)).perform(clickXY(0, 0));
         setUseThreeLetterAbbreviation(true);
-        takeScreenShot();
+
     }
 
 
@@ -261,7 +263,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.SUNDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -269,7 +271,7 @@ public class ApplicationTest {
         // defaults to Monday
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
-        takeScreenShot();
+
     }
 
     @Test
@@ -277,7 +279,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.TUESDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -285,7 +287,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.WEDNESDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -293,7 +295,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.THURSDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -301,7 +303,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.FRIDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -309,7 +311,7 @@ public class ApplicationTest {
         //Sun, 08 Feb 2015 00:00:00 GMT
         setDate(new Date(1423353600000L));
         setFirstDayOfWeek(Calendar.SATURDAY);
-        takeScreenShot();
+
     }
 
     @Test
@@ -319,7 +321,7 @@ public class ApplicationTest {
         setFirstDayOfWeek(Calendar.WEDNESDAY);
         onView(withId(R.id.set_locale)).perform(clickXY(0, 0));
         setUseThreeLetterAbbreviation(true);
-        takeScreenShot();
+
     }
 
     @Test
@@ -346,7 +348,7 @@ public class ApplicationTest {
         //Thr, 05 Feb 2015 00:00:00 GMT - expected
         verify(listener).onDayClick(instance.getTime());
         verifyNoMoreInteractions(listener);
-        takeScreenShot();
+
     }
 
     @Test
@@ -481,7 +483,7 @@ public class ApplicationTest {
         setDate(new Date(1423353600000L));
         compactCalendarView.setCurrentDayTextColor(Color.BLACK);
         compactCalendarView.setCurrentSelectedDayTextColor(Color.BLUE);
-        takeScreenShot();
+
     }
 
     @Test
@@ -489,7 +491,7 @@ public class ApplicationTest {
         compactCalendarView.shouldSelectFirstDayOfMonthOnScroll(false);
         setDate(new Date(1423353600000L));
         scrollCalendarForwardBy(1);
-        takeScreenShot();
+
     }
 
     // Nasty hack to get the toolbar to update the current month
@@ -551,22 +553,7 @@ public class ApplicationTest {
         });
     }
 
-    private void capture(final String name) {
-        getInstrumentation().runOnMainSync(new Runnable() {
-            @Override
-            public void run() {
-                compactCalendarView.requestLayout();
-                ViewHelpers.setupView(mainContent)
-                        .setExactHeightPx(mainContent.getHeight())
-                        .setExactWidthPx(mainContent.getWidth())
-                        .layout();
-                safeSleep(200);
-                Screenshot.snap(mainContent)
-                        .setName(name)
-                        .record();
-            }
-        });
-    }
+
 
     private void setDate(final Date date) {
         getInstrumentation().runOnMainSync(new Runnable() {
@@ -747,22 +734,7 @@ public class ApplicationTest {
         }
     }
 
-    private void takeScreenShot(final int height) {
-        activityRule.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                ViewHelpers.setupView(mainContent)
-                        .setExactHeightDp(height)
-                        .setExactWidthPx(mainContent.getWidth())
-                        .layout();
-            }
-        });
 
-        Screenshot.snap(mainContent)
-                .record();
-    }
 
-    private void takeScreenShot() {
-        takeScreenShot(600);
-    }
+
 }

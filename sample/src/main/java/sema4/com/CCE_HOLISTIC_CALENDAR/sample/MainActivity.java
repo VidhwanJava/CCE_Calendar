@@ -1,4 +1,4 @@
-package sundeepk.github.com.sample;
+package sema4.com.CCE_HOLISTIC_CALENDAR.sample;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager pager;
     private ViewPagerAdapter adapter;
     private SlidingTabLayout tabs;
-    private CharSequence titles[]= {"Calender","About Us"};
+    private CharSequence titles[]= {"CALENDAR","ABOUT US"};
     private int numberOfTabs = 2;
 
     @Override
