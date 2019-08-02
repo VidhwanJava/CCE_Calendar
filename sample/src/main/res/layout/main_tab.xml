@@ -91,7 +91,7 @@
             android:text="@string/all_dates_marked_as_red_and_with_red_dot_are_hoiday"
             android:textColor="@android:color/darker_gray"
             android:textStyle="italic"
-            android:visibility="invisible" />
+            android:visibility="gone" />
     </LinearLayout>
 
 
